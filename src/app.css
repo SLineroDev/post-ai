@@ -1,0 +1,24 @@
+@import "@fontsource/montserrat";
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  font-family: "Montserrat", system-ui, sans-serif;
+  /*
+  background: linear-gradient(hsl(0deg, 0%, 10%) 2%, hsl(270deg, 70%, 40%), hsl(225deg, 74%, 58%));
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; */
+}
