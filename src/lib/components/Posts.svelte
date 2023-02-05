@@ -6,6 +6,4 @@
 	let subtitle = 'Generate a social media post';
 </script>
 
-<div in:fade>
-	<Form {title} {subtitle} />
-</div>
+<Form {title} {subtitle} />

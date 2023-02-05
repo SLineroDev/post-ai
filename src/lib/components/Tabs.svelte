@@ -1,25 +1,30 @@
 <script lang="ts">
+	import { crossFadeAnimation } from '$lib/utils/animations';
 	import type { TabItem } from '../interfaces/tabs';
 
-	export let tabs: TabItem[] = [];
-	export let activeTab = 0;
+	export let tabs: TabItem[];
+	export let activeTab: string;
 
-	function handleClick(tabIndex: number) {
-		activeTab = tabIndex;
+	const [send, receive] = crossFadeAnimation();
+
+	function handleClick(tabLabel: string) {
+		activeTab = tabLabel;
 	}
 </script>
 
 <ul>
-	{#each tabs as tab, i}
-		<li class={activeTab === i ? 'active' : ''}>
-			<button on:click={() => handleClick(i)}>{tab.label}</button>
+	{#each tabs as tab (tab)}
+		<li class={activeTab === tab.label ? 'active' : ''}>
+			<button on:click={() => handleClick(tab.label)}>{tab.label}</button>
 		</li>
 	{/each}
 </ul>
 <div class="box">
-	{#each tabs as tab, i}
-		{#if activeTab === i}
-			<svelte:component this={tab.component} />
+	{#each tabs as tab (tab)}
+		{#if activeTab === tab.label}
+			<div in:receive={{ key: tab }}>
+				<svelte:component this={tab.component} />
+			</div>
 		{/if}
 	{/each}
 </div>

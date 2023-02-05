@@ -1,8 +1,8 @@
 import { quintOut } from 'svelte/easing';
-import {  crossfade } from 'svelte/transition';
+import { crossfade } from 'svelte/transition';
 
-export function crossFadeAnimation(duration?: number){
-  return crossfade({
+export function crossFadeAnimation(duration?: number) {
+	return crossfade({
 		duration: (d) => Math.sqrt(d * 200),
 
 		fallback(node) {

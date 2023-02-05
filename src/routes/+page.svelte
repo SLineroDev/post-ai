@@ -10,4 +10,4 @@
 	];
 </script>
 
-<Tabs {tabs} />
+<Tabs {tabs} activeTab={tabs[0].label} />

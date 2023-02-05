@@ -12,11 +12,15 @@
 
 <div class="keyword-list">
 	{#each keywordList as keyword (keyword)}
-		<span class="keyword" in:receive={{ key: keyword }} out:send={{ key: keyword }}>
+		<span class="keyword" in:receive|local={{ key: keyword }} out:send|local={{ key: keyword }}>
 			<span class="keyword_content">
 				{keyword}
 			</span>
-			<span class="keyword_remove" on:click={() => removeKeyword(keyword)} on:keydown={(e)=> console.log(e)}>
+			<span
+				class="keyword_remove"
+				on:click={() => removeKeyword(keyword)}
+				on:keydown={(e) => console.log(e)}
+			>
 				<CloseIcon />
 			</span>
 		</span>
