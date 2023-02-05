@@ -1,35 +1,37 @@
 <script lang="ts">
-	import { Model } from '../interfaces/cohere';
-	import { customCommand, getTopicGeneratorPrompt } from '../services';
+	import { customCommand } from '../../services';
+	import { addKeywordIfValid } from './form.helper';
 	import KeywordsInput from './keywords/KeywordsInput.svelte';
 
 	export let title = 'AI Content Generator';
 	export let subtitle = '';
 
+	let keywordsInput: string = '';
 	let keywordList: string[] = [];
-	let aiResponse: Promise<string>;
+	let aiResponse: Promise<string[]>;
 
-	async function handleClick() {
-		aiResponse = customCommand({
-			model: Model.COMMAND_XLARGE_NIGHTLY,
-			prompt: getTopicGeneratorPrompt(keywordList),
-			maxTokens: 200
-		});
+	function handleClick() {
+		if (keywordsInput){
+			addKeywordIfValid(keywordsInput, keywordList)
+		}
+		aiResponse = customCommand(keywordList);
 	}
 </script>
 
 <h2>{title}</h2>
 <h3>{subtitle}</h3>
 <form on:submit|preventDefault>
-	<KeywordsInput bind:keywordList />
+	<KeywordsInput bind:keywordsInput bind:keywordList />
 	<button on:click={handleClick}>Generate</button>
 </form>
 
 {#if aiResponse != undefined}
 	{#await aiResponse}
 		<p>...waiting</p>
-	{:then resp}
-		<p>{resp}</p>
+	{:then ideasList}
+		{#each ideasList as idea}
+			<div>{idea}</div>
+		{/each}
 	{:catch error}
 		<p style="color: red">{error.message}</p>
 	{/await}

@@ -1,15 +1,17 @@
 <script lang="ts">
-	import { crossFadeAnimation } from '$lib/utils/animations';
-	import { isAlreadyInTheList, isLastCharacterAComma } from './KeywordsInput';
+	import { addKeywordIfValid, isLastCharacterAComma } from '../form.helper';
 	import KeywordsList from './KeywordsList.svelte';
 
 	export let keywordList: string[];
-	let keywordsInput: string = '';
+	export let keywordsInput: string;
 
 	$: if (isLastCharacterAComma(keywordsInput)) {
-		const newKeyword = keywordsInput.slice(0, -1).trim();
+		keywordList = addKeywordIfValid(keywordsInput, keywordList);
 		keywordsInput = '';
-		if (!isAlreadyInTheList(newKeyword, keywordList)) keywordList = [...keywordList, newKeyword];
+	}
+
+	function addKeyword() {
+		keywordsInput += ',';
 	}
 </script>
 
@@ -18,7 +20,7 @@
 		<span>Keywords</span>
 		<span class="secondary-label-text">(Comma sepparated)</span>
 	</span>
-	<input bind:value={keywordsInput} on:keydown={(e) => e.key === 'Enter'} />
+	<input bind:value={keywordsInput} on:keydown={(e) => e.key === 'Enter' && addKeyword()} />
 </label>
 <KeywordsList bind:keywordList />
 

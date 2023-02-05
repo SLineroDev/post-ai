@@ -16,9 +16,9 @@
 			<span class="keyword_content">
 				{keyword}
 			</span>
-			<button class="keyword_remove" on:click={() => removeKeyword(keyword)}>
+			<span class="keyword_remove" on:click={() => removeKeyword(keyword)} on:keydown={(e)=> console.log(e)}>
 				<CloseIcon />
-			</button>
+			</span>
 		</span>
 	{/each}
 </div>

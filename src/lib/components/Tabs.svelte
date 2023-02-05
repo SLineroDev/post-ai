@@ -1,13 +1,10 @@
 <script lang="ts">
-	import { fade } from 'svelte/transition';
 	import type { TabItem } from '../interfaces/tabs';
 
 	export let tabs: TabItem[] = [];
 	export let activeTab = 0;
 
 	function handleClick(tabIndex: number) {
-		console.log('click');
-
 		activeTab = tabIndex;
 	}
 </script>
