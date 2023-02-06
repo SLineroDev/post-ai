@@ -23,4 +23,10 @@
 			flex-direction: column;
 		}
 	}
+
+	@media (max-width: 655px) {
+		main {
+			margin: 0;
+		}
+	}
 </style>

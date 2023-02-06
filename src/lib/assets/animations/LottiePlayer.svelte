@@ -1,4 +1,5 @@
 <script>
+// @ts-nocheck
 	import { LottiePlayer } from '@lottiefiles/svelte-lottie-player';
 
 	export let src = '';
@@ -22,6 +23,7 @@
 </script>
 
 <LottiePlayer
+	style="display:flex;align-items:center"
 	{src}
 	autoplay={true}
 	loop={true}
