@@ -19,7 +19,7 @@
 		flex-direction: column;
 		justify-content: space-between;
 		flex: 1;
-		gap: 1rem;
+		gap: 2rem;
 	}
 
 	button {
@@ -27,7 +27,7 @@
 	}
 
 	form > button {
-		padding: 0.5rem 0;
+		padding: 1rem 0;
 		color: white;
 		font-weight: 700;
 		background-color: #ff6263;

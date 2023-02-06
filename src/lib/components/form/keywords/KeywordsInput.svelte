@@ -50,7 +50,8 @@
 	}
 
 	input {
-		border-left: 2px solid #ff6263;
+		border-bottom: 2px solid #ff6263;
+		line-height: 1.3;
 		font-size: 20px;
 		color: #6455a8;
 		font-weight: 700;

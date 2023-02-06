@@ -8,14 +8,13 @@
     flex-direction: column;
 		background: #FAFAFB;
 		border-radius: 1.5rem;
-    width: 45%;
+    width: 42%;
     height: 500px;
 	}
 
 	@media (max-width: 1400px) {
     .card {
       min-width: auto;
-      width: 450px;
     }
   }
 

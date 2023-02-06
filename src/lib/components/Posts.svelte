@@ -1,25 +1,42 @@
 <script lang="ts">
-	import { generateIdeas } from '$lib/services';
-	import { error, ideasList, loading } from '../../stores/result.store';
-	import { addKeywordIfValid } from './form/form.helper';
+	import type { GeneratePostSettings } from '$lib/interfaces/post';
+	import { generatePost } from '$lib/services';
+	import { error, postResult, loading } from '../../stores/result.store';
 	import Form from './form/Form.svelte';
-	import KeywordsInput from './form/keywords/KeywordsInput.svelte';
+	import Select from './form/Select.svelte';
 
-	let title = 'Now let\'s start generating the next post!';
-	let subtitle = 'For example sport, food or money';
-	let keywordsInput: string = '';
-	let keywordList: string[] = [];
+	let title = "Now let's start generating the next post!";
+
+	let postTitle = 'The benefits of a healthy lifestyle';
+
+	let toneOptions: string[] = [
+		'neutral',
+		'formal',
+		'informal',
+		'fun',
+		'romantic',
+		'drama',
+		'informative'
+	];
+	let audienceOptions: string[] = ['everyone', 'Z Generation', 'Millennials', 'X Generation', 'Baby Boomers', 'Silent Gen'];
+	let socialMediaOptions: string[] = ['Instagram', 'Twitter', 'Facebook', 'LinkedIn'];
+	let selectedTone: string = toneOptions[0];
+	let selectedAudience: string = audienceOptions[0];
+	let selectedSocialMedia: string = socialMediaOptions[0];
 
 	function handleGenerate() {
+		if (!postTitle) return;
 		loading.set(true);
 		error.set(false);
-		if (keywordsInput) {
-			keywordList = addKeywordIfValid(keywordsInput, keywordList);
-			keywordsInput = '';
-		}
-		generateIdeas(keywordList)
-			.then((resp: string[]) => {
-				ideasList.set(resp);
+		const postSettings: GeneratePostSettings = {
+			title: postTitle,
+			tone: selectedTone,
+			audience: selectedAudience,
+			socialMedia: selectedSocialMedia
+		};
+		generatePost(postSettings)
+			.then((resp: string) => {
+				postResult.set(resp);
 			})
 			.catch((e) => {
 				error.set(true);
@@ -34,9 +51,32 @@
 	<title>postai - Ideas Generator</title>
 </svelte:head>
 <h2>{title}</h2>
-<h3>{subtitle}</h3>
 <Form on:generate={handleGenerate}>
-	<KeywordsInput bind:keywordsInput bind:keywordList />
+	<input bind:value={postTitle} placeholder="Insert a title for your post" />
+	<div class="select-container">
+		<div class="row">
+			<Select
+				bind:selected={selectedTone}
+				label="Tone"
+				options={toneOptions}
+				leftIconURL="/tone.svg"
+			/>
+			<Select
+				bind:selected={selectedAudience}
+				label="Audience"
+				options={audienceOptions}
+				leftIconURL="/audience.svg"
+			/>
+		</div>
+		<div class="row">
+			<Select
+				bind:selected={selectedSocialMedia}
+				label="Social Media"
+				options={socialMediaOptions}
+				leftIconURL="/share.svg"
+			/>
+		</div>
+	</div>
 </Form>
 
 <style>
@@ -45,11 +85,39 @@
 		font-weight: 700;
 		color: #6455a8;
 	}
-	h3 {
-		margin-top: 0.25rem;
-		margin-bottom: 2rem;
-		color: #FF6263;
+	input {
+		border-bottom: 2px solid #ff6263;
+		font-weight: 700;
+		padding-top: 1.5rem;
+		line-height: 1.3;
+		color: #ff6263;
 		opacity: 0.75;
 		font-size: 20px;
+	}
+
+	input::placeholder {
+		opacity: 0.6;
+	}
+
+	.select-container {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		gap: 2rem;
+		flex: 1;
+	}
+
+	@media (max-width: 600px) {
+		.row {
+			flex-direction: column;
+		}
+		.select-container {
+			gap: 1rem;
+		}
+	}
+	.row {
+		display: flex;
+		justify-content: space-between;
+		gap: 1rem;
 	}
 </style>

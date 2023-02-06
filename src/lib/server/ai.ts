@@ -14,7 +14,7 @@ export function buildData(parameters: Parameters): CohereRequestParameters {
 	return {
 		model: parameters.model || 'command-xlarge-nightly',
 		prompt: parameters.prompt,
-		max_tokens: parameters.maxTokens || 220,
+		max_tokens: parameters.maxTokens || 300,
 		temperature: parameters.temperature || 1.5,
 		k: parameters.k || 0,
 		p: parameters.p || 0.75,

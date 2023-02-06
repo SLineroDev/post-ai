@@ -8,10 +8,3 @@ export interface TabItem {
 	iconComponent: ComponentType;
 }
 
-export interface FormData {
-	postTopic?: string;
-	keywordsInput?: string;
-	keywordsList?: string[];
-	ideasList?: string[];
-	post?: string;
-}
