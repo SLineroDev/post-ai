@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { customCommand } from '$lib/services';
+	import { generateIdeas } from '$lib/services';
 	import { error, ideasList, loading } from '../../stores/result.store';
 	import { addKeywordIfValid } from './form/form.helper';
 	import Form from './form/Form.svelte';
@@ -17,7 +17,7 @@
 			keywordList = addKeywordIfValid(keywordsInput, keywordList);
 			keywordsInput = '';
 		}
-		customCommand(keywordList)
+		generateIdeas(keywordList)
 			.then((resp: string[]) => {
 				ideasList.set(resp);
 			})

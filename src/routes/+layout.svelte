@@ -18,8 +18,10 @@
 	}
 	main {
 		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex: 1;
 		gap: 2rem;
-		margin: auto;
 		padding: 1.5rem;
 	}
 

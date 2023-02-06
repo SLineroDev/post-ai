@@ -8,7 +8,7 @@
     flex-direction: column;
 		background: #FAFAFB;
 		border-radius: 1.5rem;
-    min-width: 600px;
+    width: 45%;
     height: 500px;
 	}
 
