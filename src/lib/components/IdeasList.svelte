@@ -1,6 +1,7 @@
 <script lang="ts">
-	import { fade } from "svelte/transition";
-
+	import Copy from '$lib/assets/icons/Copy.svelte';
+	import Heart from '$lib/assets/icons/Heart.svelte';
+	import { fade } from 'svelte/transition';
 
 	export let ideasList: string[];
 
@@ -11,25 +12,28 @@
 	}
 </script>
 
-<div class="ideas-container" >
+<div class="ideas-container">
 	{#each ideasList as idea, i}
 		<div class="idea">
 			<span class="order">{i + 1}.</span>
 			<div class="idea_content">
-        <span>{removeIdeasNumber(idea)}</span>
-        <span>buttons</span>
-      </div>
+				<span>{removeIdeasNumber(idea)}</span>
+				<div class="idea_buttons">
+					<span><Copy /></span>
+					<span><Heart /></span>
+				</div>
+			</div>
 		</div>
 	{/each}
 </div>
 
 <style>
 	.ideas-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    height: 100%;
-  }
+		display: flex;
+		flex-direction: column;
+		justify-content: space-around;
+		height: 100%;
+	}
 
 	.idea {
 		display: flex;
@@ -44,15 +48,19 @@
 	}
 
 	.idea_content {
-    display: flex;
-    justify-content: space-between;
+		display: flex;
+		justify-content: space-between;
 		align-items: center;
-		gap: 0.5em;
+		gap: 1em;
 		color: #6455a8;
 		font-size: 14px;
 		background-color: white;
 		border-radius: 1rem;
-    flex: 1;
+		flex: 1;
 		padding: 1em;
+	}
+	.idea_buttons {
+		display: flex;
+		gap: 0.5em;
 	}
 </style>

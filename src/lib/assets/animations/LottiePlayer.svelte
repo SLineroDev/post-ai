@@ -23,7 +23,7 @@
 </script>
 
 <LottiePlayer
-	style="display:flex;align-items:center"
+	style="display:flex;align-items:center;justify-content: center;"
 	{src}
 	autoplay={true}
 	loop={true}
