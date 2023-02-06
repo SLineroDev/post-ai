@@ -1,22 +1,16 @@
 <script>
+	import HeaderTitle from '$lib/assets/HeaderTitle.svelte';
 	import '../app.css';
 </script>
 
 <header>
-	<h1>SocialMediaAI</h1>
+	<HeaderTitle />
 </header>
 <main>
 	<slot />
 </main>
 
 <style>
-	h1 {
-		padding-top: 1rem;
-		font-size: 24px;
-		font-weight: 700;
-		color: #6455a8;
-		text-align: center;
-	}
 	main {
 		display: flex;
 		gap: 2rem;
