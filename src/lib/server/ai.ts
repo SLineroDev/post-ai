@@ -1,12 +1,11 @@
 import type { CohereRequestParameters, GenerateResponse, Parameters } from '../interfaces';
+import { SECRET_COHERE_API_KEY } from '$env/static/private'
 
-const COHERE_API_KEY = 'AcyitJaQynnxhLqxuTNhGAaDY5TR3TvTzWPmaY3c';
 const COHERE_API_GENERATE_URL = 'https://api.cohere.ai/generate';
-const COHERE_API_DETECT_LANGUAGE_URL = 'https://api.cohere.ai/detect-language';
 
 const headers = {
 	accept: 'application/json',
-	authorization: `BEARER ${COHERE_API_KEY}`,
+	authorization: `BEARER ${SECRET_COHERE_API_KEY}`,
 	'Content-Type': 'application/json',
 	'Cohere-Version': '2022-12-06'
 };
@@ -24,21 +23,6 @@ export function buildData(parameters: Parameters): CohereRequestParameters {
 		stop_sequences: parameters.stopSequences || [],
 		return_likelihoods: parameters.returnLikelihoods || 'NONE'
 	};
-}
-
-export async function isEnglish(input: string) {
-	const data = {
-		texts: [input]
-	};
-
-	const { results } = await fetch(COHERE_API_DETECT_LANGUAGE_URL, {
-		method: 'POST',
-		headers,
-		body: JSON.stringify(data)
-	}).then((res) => res.json());
-
-	const [{ language_code }] = results;
-	return language_code === 'en';
 }
 
 export async function generate(parameters: CohereRequestParameters) {

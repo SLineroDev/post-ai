@@ -15,14 +15,16 @@
 	}
 </script>
 
-<label>
-	<span>
-		<span>Keywords</span>
-		<span class="secondary-label-text">(Comma sepparated)</span>
-	</span>
-	<input bind:value={keywordsInput} on:keydown={(e) => e.key === 'Enter' && addKeyword()} />
-</label>
-<KeywordsList bind:keywordList />
+<div>
+	<label>
+		<input
+			bind:value={keywordsInput}
+			on:keydown={(e) => e.key === 'Enter' && addKeyword()}
+			placeholder="Insert your keywords. Ej: sport, food, money"
+		/>
+	</label>
+	<KeywordsList bind:keywordList />
+</div>
 
 <style>
 	label {
@@ -31,18 +33,29 @@
 		justify-content: space-between;
 	}
 
-	label span {
+	/* 	label span {
 		display: flex;
 		flex-direction: column;
 	}
 
 	label .secondary-label-text {
 		font-size: 11px;
+	} */
+
+	input::placeholder {
+		color: #cecece;
+	}
+	input:hover {
+		cursor: text;
 	}
 
 	input {
-		border: 1px solid #ccc;
-		border-radius: 0.5rem;
-		padding: 0.5rem;
+		border-left: 2px solid #ff6263;
+		font-size: 20px;
+		color: #6455a8;
+		font-weight: 700;
+		width: 100%;
+		padding: 0.125rem 0.5rem;
+		caret-color: #ff6263;
 	}
 </style>

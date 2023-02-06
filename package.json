@@ -33,6 +33,6 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"@fontsource/montserrat": "^4.5.14"
+		"@lottiefiles/svelte-lottie-player": "^0.3.0"
 	}
 }

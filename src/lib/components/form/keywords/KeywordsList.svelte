@@ -30,18 +30,20 @@
 <style>
 	.keyword-list {
 		display: flex;
-		justify-content: flex-end;
 		gap: 1rem;
 		flex-wrap: wrap;
+		margin-top: 3rem;
 	}
 
 	.keyword {
-		border: 1px solid #ccc;
-		border-radius: 0.5rem;
+		border-radius: 12px;
 		display: flex;
-		gap: 0.25rem;
+		background-color: #E0E4FF;
+		gap: 0.5rem;
 		font-size: 14px;
-		padding: 0.25rem;
+		padding: 0.5rem 1rem;
+		color: #6455A8;
+		font-weight: 700;
 	}
 
 	.keyword_remove {
@@ -50,11 +52,11 @@
 		border-radius: 0.5rem;
 		width: 12px;
 		height: 12px;
-		align-self: flex-start;
+		align-self: center;
 	}
 
 	.keyword_remove:hover {
 		cursor: pointer;
-		background-color: #eee;
+		color: #463887;
 	}
 </style>

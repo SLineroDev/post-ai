@@ -1,4 +1,5 @@
 <script lang="ts">
+	import ActiveTabLine from '$lib/assets/icons/ActiveTabLine.svelte';
 	import { crossFadeAnimation } from '$lib/utils/animations';
 	import type { TabItem } from '../interfaces/tabs';
 
@@ -16,55 +17,53 @@
 	{#each tabs as tab (tab)}
 		<li class={activeTab === tab.label ? 'active' : ''}>
 			<button on:click={() => handleClick(tab.label)}>{tab.label}</button>
+			<ActiveTabLine strokeWidth={activeTab === tab.label ? 8 : 0} />
 		</li>
 	{/each}
 </ul>
-<div class="box">
-	{#each tabs as tab (tab)}
-		{#if activeTab === tab.label}
-			<div in:receive={{ key: tab }}>
-				<svelte:component this={tab.component} />
-			</div>
-		{/if}
-	{/each}
-</div>
+{#each tabs as tab (tab)}
+	{#if activeTab === tab.label}
+		<div class="form-container" in:receive={{ key: tab }}>
+			<svelte:component this={tab.component} />
+		</div>
+	{/if}
+{/each}
 
 <style>
-	.box {
-		margin-bottom: 10px;
-		padding: 2rem;
-		border: 1px solid #dee2e6;
-		border-radius: 0 0 0.5rem 0.5rem;
-		border-top: 0;
-	}
 	ul {
 		display: flex;
 		flex-wrap: wrap;
 		padding-left: 0;
 		margin-bottom: 0;
+		flex: 0 0 auto;
+		height: 60px;
 		list-style: none;
-		border-bottom: 1px solid #dee2e6;
+		border-bottom: 2px solid #6455a88b;
+		justify-content: space-evenly;
+		align-items: flex-end;
 	}
 	li {
-		margin-bottom: -1px;
+		font-weight: 700;
+		margin-bottom: -9px;
 	}
 
 	button {
-		border: 1px solid transparent;
-		border-top-left-radius: 0.25rem;
-		border-top-right-radius: 0.25rem;
 		display: block;
-		padding: 0.5rem 1rem;
 		cursor: pointer;
+		margin: auto;
+		color: #939393;
 	}
 
-	button:hover {
-		border-color: #e9ecef #e9ecef #dee2e6;
+	li.active button,
+	li:hover button {
+		cursor: pointer;
+		color: #6455a8;
 	}
 
-	li.active > button {
-		color: #495057;
-		background-color: #fff;
-		border-color: #dee2e6 #dee2e6 #fff;
+	.form-container {
+		padding: 2rem;
+		height: 100%;
+		display: flex;
+		flex-direction: column;
 	}
 </style>
