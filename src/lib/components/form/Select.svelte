@@ -48,6 +48,8 @@
     padding: 10px;
     padding-left: 45px;
     appearance: none;
+    font-weight: 700;
+    font-family: inherit;
   }
 
   select:focus-within,
