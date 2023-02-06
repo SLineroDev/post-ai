@@ -1,6 +1,6 @@
 const GENERATE_URL = '/api/generate';
 
-export async function customCommand(keywords: string[]) {
+export async function generateIdeas(keywords: string[]) {
 	const response = await fetch(GENERATE_URL, {
 		method: 'POST',
 		headers: { 'Content-Type': 'application/json' },

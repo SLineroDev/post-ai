@@ -1,56 +1,19 @@
 <script lang="ts">
-	import { ideasList, error, loading } from '../../../stores/result.store';
-	import { customCommand } from '../../services';
-	import { addKeywordIfValid } from './form.helper';
-	import KeywordsInput from './keywords/KeywordsInput.svelte';
+	import { createEventDispatcher } from 'svelte';
 
-	export let title = 'AI Content Generator';
-	export let subtitle = '';
+	const dispatch = createEventDispatcher();
 
-	let keywordsInput: string = '';
-	let keywordList: string[] = [];
-
-	function handleClick() {
-		loading.set(true);
-		error.set(false);
-		if (keywordsInput) {
-			keywordList = addKeywordIfValid(keywordsInput, keywordList);
-			keywordsInput = '';
-		}
-		customCommand(keywordList)
-			.then((resp: string[]) => {
-				ideasList.set(resp);
-			})
-			.catch((e) => {
-				error.set(true);
-			})
-			.finally(() => {
-				loading.set(false);
-			});
+	function generate() {
+		dispatch('generate');
 	}
 </script>
 
-<h2>{title}</h2>
-<h3>{subtitle}</h3>
 <form on:submit|preventDefault>
-	<KeywordsInput bind:keywordsInput bind:keywordList />
-	<button on:click={handleClick}>Generate</button>
+	<slot />
+	<button on:click={generate}>Generate</button>
 </form>
 
 <style>
-	h2 {
-		font-size: 24px;
-		font-weight: 700;
-		color: #6455a8;
-	}
-	h3 {
-		margin-top: 0.25rem;
-		margin-bottom: 2rem;
-		color: #6455a8;
-		opacity: 0.75;
-		font-size: 20px;
-	}
-
 	form {
 		display: flex;
 		flex-direction: column;
