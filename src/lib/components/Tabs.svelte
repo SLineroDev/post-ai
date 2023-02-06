@@ -16,7 +16,13 @@
 <ul>
 	{#each tabs as tab (tab)}
 		<li class={activeTab === tab.label ? 'active' : ''}>
-			<button on:click={() => handleClick(tab.label)}>{tab.label}</button>
+			<button class="tab_button" on:click={() => handleClick(tab.label)}>
+				<svelte:component
+					this={tab.iconComponent}
+					pathFill={activeTab === tab.label ? '#6455A8' : '#A8A8A8'}
+				/>
+				{tab.label}
+			</button>
 			<ActiveTabLine strokeWidth={activeTab === tab.label ? 8 : 0} />
 		</li>
 	{/each}
@@ -47,16 +53,22 @@
 		margin-bottom: -9px;
 	}
 
-	button {
-		display: block;
+	.tab_button {
+		font-size: 20px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		gap: 0.25em;
 		cursor: pointer;
 		margin: auto;
 		color: #939393;
 	}
 
 	li.active button,
-	li:hover button {
+	li:hover button,
+	li:hover button svg path {
 		cursor: pointer;
+		fill: #6455a8;
 		color: #6455a8;
 	}
 
