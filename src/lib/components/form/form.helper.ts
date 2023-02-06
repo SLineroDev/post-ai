@@ -7,7 +7,8 @@ export function isAlreadyInTheList(newKeyword: string, keywordList: string[]){
 }
 
 export function addKeywordIfValid(input: string, keywordList: string[]){
-  const newKeyword = input.slice(0, -1).trim();
-  if (!isAlreadyInTheList(newKeyword, keywordList)) keywordList = [...keywordList, newKeyword];
-  return keywordList;
+const newKeyword = input.trim();
+let list = [...keywordList]
+  if (!isAlreadyInTheList(newKeyword, keywordList)) list = [...list, newKeyword];
+  return list;
 }

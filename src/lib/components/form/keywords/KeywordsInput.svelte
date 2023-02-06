@@ -6,7 +6,7 @@
 	export let keywordsInput: string;
 
 	$: if (isLastCharacterAComma(keywordsInput)) {
-		keywordList = addKeywordIfValid(keywordsInput, keywordList);
+		keywordList = addKeywordIfValid(keywordsInput.slice(0, -1), keywordList);
 		keywordsInput = '';
 	}
 

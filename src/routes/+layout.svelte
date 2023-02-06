@@ -11,6 +11,11 @@
 </main>
 
 <style>
+	header {
+		display: flex;
+		justify-content: center;
+		padding-top: 2rem;
+	}
 	main {
 		display: flex;
 		gap: 2rem;

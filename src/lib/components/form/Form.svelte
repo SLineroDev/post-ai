@@ -14,7 +14,8 @@
 		loading.set(true);
 		error.set(false);
 		if (keywordsInput) {
-			addKeywordIfValid(keywordsInput, keywordList);
+			keywordList = addKeywordIfValid(keywordsInput, keywordList);
+			keywordsInput = '';
 		}
 		customCommand(keywordList)
 			.then((resp: string[]) => {
