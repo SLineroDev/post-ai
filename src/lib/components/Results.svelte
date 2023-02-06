@@ -45,6 +45,7 @@
 	}
 	.results-title {
 		display: flex;
+		font-size: 20px;
 		justify-content: center;
 		align-items: flex-end;
 		height: 60px;

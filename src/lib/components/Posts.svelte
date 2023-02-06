@@ -6,7 +6,7 @@
 </script>
 
 <svelte:head>
-	<title>SocialMediaAI - {title}</title>
+	<title>postai - Post Generator</title>
 </svelte:head>
 
 <Form {title} {subtitle} />

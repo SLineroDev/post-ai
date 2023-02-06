@@ -5,11 +5,11 @@
 	import Card from '../lib/components/Card.svelte';
 	import Posts from '../lib/components/Posts.svelte';
 	import Tabs from '../lib/components/Tabs.svelte';
-	import Topics from '../lib/components/Topics.svelte';
+	import Ideas from '../lib/components/Ideas.svelte';
 	import type { TabItem } from '../lib/interfaces/tabs';
 
 	const tabs: TabItem[] = [
-		{ label: 'Ideas', component: Topics, iconComponent: NewIdeaIcon },
+		{ label: 'Ideas', component: Ideas, iconComponent: NewIdeaIcon },
 		{ label: 'Posts', component: Posts, iconComponent: NewPostIcon }
 	];
 </script>

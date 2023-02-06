@@ -17,10 +17,7 @@
 	{#each tabs as tab (tab)}
 		<li class={activeTab === tab.label ? 'active' : ''}>
 			<button class="tab_button" on:click={() => handleClick(tab.label)}>
-				<svelte:component
-					this={tab.iconComponent}
-					pathFill={activeTab === tab.label ? '#6455A8' : '#A8A8A8'}
-				/>
+				<svelte:component this={tab.iconComponent} />
 				{tab.label}
 			</button>
 			<ActiveTabLine strokeWidth={activeTab === tab.label ? 8 : 0} />
@@ -65,8 +62,7 @@
 	}
 
 	li.active button,
-	li:hover button,
-	li:hover button svg path {
+	li:hover button {
 		cursor: pointer;
 		fill: #6455a8;
 		color: #6455a8;

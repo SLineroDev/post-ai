@@ -20,7 +20,7 @@
 		<input
 			bind:value={keywordsInput}
 			on:keydown={(e) => e.key === 'Enter' && addKeyword()}
-			placeholder="Insert your keywords. Ej: sport, food, money"
+			placeholder="Insert your keywords. Ex: sport, food, money"
 		/>
 	</label>
 	<KeywordsList bind:keywordList />
