@@ -26,9 +26,17 @@ test('posts tab is not selected', async ({ page }) => {
 test('posts tab is selected when clicking it', async ({ page }) => {
 	await page.goto('/');
 	const postsTab = page.getByRole('button', { name: 'Posts' });
-	const postsTitle = page.getByRole('heading', { name: 'Now let\'s start generating the next post!' });
+	const postsHeader = page.getByRole('heading', { name: 'Now let\'s start generating the next post!' });
+	const postsTitle = page.getByRole('textbox', { name: 'The benefits of a healthy lifestyle' });
+	const toneCombo = page.getByRole('combobox', { name: 'Tone' });
+	const audienceCombo = page.getByRole('combobox', { name: 'Audience' });
+	const socialMediaCombo = page.getByRole('combobox', { name: 'Social Media' });
 	await expect(page).toHaveTitle('postai - Ideas Generator');
 	await postsTab.click()
+	await expect(postsHeader).toBeDefined;
 	await expect(postsTitle).toBeDefined;
+	await expect(toneCombo).toBeDefined;
+	await expect(audienceCombo).toBeDefined;
+	await expect(socialMediaCombo).toBeDefined;
 	await expect(postsTab).toHaveCSS('color','rgb(100, 85, 168)');
 });
