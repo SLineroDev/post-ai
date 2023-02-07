@@ -24,7 +24,7 @@ export interface CohereRequestParameters {
 	presence_penalty?: number;
 	stop_sequences?: string[];
 	return_likelihoods?: ReturnLikelihoods;
-  truncate?: "END"
+	truncate?: 'END';
 }
 
 type ReturnLikelihoods = 'GENERATION' | 'NONE';

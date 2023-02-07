@@ -38,11 +38,11 @@
 	.keyword {
 		border-radius: 12px;
 		display: flex;
-		background-color: #E0E4FF;
+		background-color: #e0e4ff;
 		gap: 0.5rem;
 		font-size: 14px;
 		padding: 0.5rem 1rem;
-		color: #6455A8;
+		color: #6455a8;
 		font-weight: 700;
 	}
 

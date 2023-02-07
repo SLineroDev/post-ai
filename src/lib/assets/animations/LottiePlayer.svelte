@@ -1,5 +1,5 @@
 <script>
-// @ts-nocheck
+	// @ts-nocheck
 	import { LottiePlayer } from '@lottiefiles/svelte-lottie-player';
 
 	export let src = '';

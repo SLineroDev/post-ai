@@ -5,7 +5,7 @@
 	import { fade } from 'svelte/transition';
 
 	export let text: string;
-  export let spaceAway: number = 16
+	export let spaceAway: number = 16;
 	let copied: boolean = false;
 
 	let referenceElement;
@@ -38,7 +38,7 @@
 </Popover>
 
 <style>
-	.popover{
+	.popover {
 		font-size: 16px;
 		font-weight: 400;
 	}

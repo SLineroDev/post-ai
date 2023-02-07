@@ -1,3 +1,1 @@
-export function addIdeaFav(idea: string[]){
-  
-}
+export function addIdeaFav(idea: string[]) {}

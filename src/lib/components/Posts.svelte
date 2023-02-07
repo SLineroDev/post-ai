@@ -108,7 +108,7 @@
 		color: #6455a8;
 	}
 
-	.input > div{
+	.input > div {
 		padding-top: 0.5em;
 		color: red;
 	}

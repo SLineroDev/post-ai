@@ -8,8 +8,4 @@
 	});
 </script>
 
-<svelte:component
-	this={Lottie}
-	src={'/post.json'}
-  wi
-/>
+<svelte:component this={Lottie} src={'/post.json'} wi />

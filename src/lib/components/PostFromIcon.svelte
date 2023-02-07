@@ -30,8 +30,8 @@
 		opacity: 0.8;
 	}
 
-  button:focus-within{
-    outline: none;
-    opacity: 0.8;
-  }
+	button:focus-within {
+		outline: none;
+		opacity: 0.8;
+	}
 </style>

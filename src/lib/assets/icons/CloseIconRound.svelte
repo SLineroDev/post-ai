@@ -18,12 +18,12 @@
 <style>
 	.icon {
 		display: block;
-    fill: none;
-    transition: 1s ease-in-out;
+		fill: none;
+		transition: 1s ease-in-out;
 	}
 
 	.icon:hover {
 		cursor: pointer;
-    fill: #eee;
+		fill: #eee;
 	}
 </style>
