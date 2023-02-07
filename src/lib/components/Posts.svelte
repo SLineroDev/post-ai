@@ -65,7 +65,7 @@
 </script>
 
 <svelte:head>
-	<title>postai - Ideas Generator</title>
+	<title>postai - Post Generator</title>
 </svelte:head>
 <h2>{title}</h2>
 <Form on:generate={handleGenerate}>
