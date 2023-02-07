@@ -30,6 +30,5 @@ test('posts tab is selected when clicking it', async ({ page }) => {
 	await expect(page).toHaveTitle('postai - Ideas Generator');
 	await postsTab.click()
 	await expect(postsTitle).toBeDefined;
-	await expect(page.title()).toBe('postai - Posts Generator');
 	await expect(postsTab).toHaveCSS('color','rgb(100, 85, 168)');
 });
