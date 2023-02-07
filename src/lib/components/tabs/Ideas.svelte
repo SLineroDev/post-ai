@@ -5,8 +5,8 @@
 	import Form from '../form/Form.svelte';
 	import KeywordsInput from '../form/keywords/KeywordsInput.svelte';
 
-	let title = 'Hey! Start generating your ideas for the next post';
-	let subtitle = 'For example sport, food or money';
+	let title = 'Hey! Need ideas for your next post?';
+	let subtitle = 'Write some keywords and I will give you some';
 	let keywordsInput = '';
 	let keywordList: string[] = [];
 

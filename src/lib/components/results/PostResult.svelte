@@ -10,10 +10,6 @@
 	let loadingValue: boolean;
 	let errorValue: boolean;
 
-	function showPost() {
-		return !loadingValue && !errorValue && postValue.length > 0;
-	}
-
 	postResult.subscribe((value) => {
 		postValue = value;
 	});
@@ -26,11 +22,11 @@
 </script>
 
 <div class="results-title">
-	{#if showPost()}
+	{#if !loadingValue && !errorValue && postValue.length > 0}
 		<span class="spacer" />
 	{/if}
 	<span>Results</span>
-	{#if showPost()}
+	{#if !loadingValue && !errorValue && postValue.length > 0}
 		<span>
 			<Copy text={postValue} spaceAway={6} />
 		</span>

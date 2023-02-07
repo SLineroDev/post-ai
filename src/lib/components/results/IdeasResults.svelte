@@ -67,6 +67,7 @@
 		align-items: center;
 		padding: 1rem;
 		max-height: 450px;
+		overflow-x: hidden;
 		overflow-y: scroll;
 	}
 </style>

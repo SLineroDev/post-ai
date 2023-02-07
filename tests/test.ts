@@ -10,7 +10,7 @@ test('ideas tab is selected', async ({ page }) => {
 
 	const ideasTab = page.getByRole('button', { name: 'Ideas' });
 	const ideasTitle = page.getByRole('heading', {
-		name: 'Hey! Start generating your ideas for the next post'
+		name: 'Hey! Need ideas for your next post?'
 	});
 
 	await expect(page).toHaveTitle('postai - Ideas Generator');
