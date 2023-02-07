@@ -16,7 +16,7 @@
 <button bind:this={referenceElement} on:click={handleClick}><NewPostIcon fill="#ff6263" /></button>
 
 <Popover triggerEvents={['hover', 'focus']} {referenceElement} placement="top" spaceAway={16}>
-	<div transition:fade={{ duration: 250 }}>New Post with this Idea</div>
+	<div in:fade={{ duration: 250 }}>New Post with this Idea</div>
 </Popover>
 
 <style>

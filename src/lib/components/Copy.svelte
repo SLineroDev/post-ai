@@ -34,7 +34,7 @@
 		}
 	}}
 >
-	<div class="popover" transition:fade={{ duration: 250 }}>{copied ? 'Copied ✔️' : 'Copy'}</div>
+	<div class="popover" in:fade={{ duration: 250 }}>{copied ? 'Copied ✔️' : 'Copy'}</div>
 </Popover>
 
 <style>
