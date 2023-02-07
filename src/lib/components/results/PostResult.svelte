@@ -42,7 +42,7 @@
 		<div class="animation" in:fade>
 			<PostAnimation />
 		</div>
-	{:else if showPost()}
+	{:else if !loadingValue && !errorValue && postValue.length > 0}
 		<div class="post_result" in:fade>{postValue}</div>
 	{:else if !loadingValue && errorValue}
 		<div class="animation" in:fade>
