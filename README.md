@@ -1,16 +1,16 @@
 # Post.ai
 
-<img src="./static/meta-img.png" alt="Post.ai logo" width="50%">
+<img src="./static/meta-img.png" alt="Postai logo" width="50%">
 
-Post.ai is a web application that allows you to generate social media content.
+Postai is a web application that allows you to generate social media content.
 
 It also can help you by giving some post ideas.
 
-<img src="./readme-img/App.png" alt="Post.ai logo" width="70%">
+<img src="./readme-img/App.png" alt="Postai logo" width="70%">
 
 ## Tech stack
 
-Post.Ai is created using
+Postai is created using
 
 - [Sveltekit](https://kit.svelte.dev/)
 - [Playwright](https://playwright.dev/) for testing
