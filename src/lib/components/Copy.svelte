@@ -5,8 +5,8 @@
 	import { fade } from 'svelte/transition';
 
 	export let text: string;
-	export let spaceAway: number = 16;
-	let copied: boolean = false;
+	export let spaceAway = 16;
+	let copied = false;
 
 	let referenceElement;
 </script>
@@ -15,7 +15,7 @@
  -->
 <button
 	use:copy={text}
-	on:svelte-copy={(event) => {
+	on:svelte-copy={() => {
 		copied = true;
 		console.log('copied', copied);
 	}}

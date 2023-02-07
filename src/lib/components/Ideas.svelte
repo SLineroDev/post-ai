@@ -7,7 +7,7 @@
 
 	let title = 'Hey! Start generating your ideas for the next post';
 	let subtitle = 'For example sport, food or money';
-	let keywordsInput: string = '';
+	let keywordsInput = '';
 	let keywordList: string[] = [];
 
 	function handleGenerate() {
@@ -21,7 +21,7 @@
 			.then((resp: string[]) => {
 				ideasList.set(resp);
 			})
-			.catch((e) => {
+			.catch(() => {
 				errorIdeas.set(true);
 			})
 			.finally(() => {

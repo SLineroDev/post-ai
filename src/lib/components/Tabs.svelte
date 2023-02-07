@@ -7,7 +7,7 @@
 	export let tabs: TabItem[];
 	export let activeTabValue: string;
 
-	const [send, receive] = crossFadeAnimation();
+	const [, receive] = crossFadeAnimation();
 
 	function handleClick(tabLabel: string) {
 		activeTab.set(tabLabel);

@@ -13,7 +13,7 @@
 		postTitle = value;
 	});
 
-	let showValidation: boolean = false;
+	let showValidation = false;
 
 	let toneOptions: string[] = [
 		'neutral',
@@ -55,7 +55,7 @@
 			.then((resp: string) => {
 				postResult.set(resp);
 			})
-			.catch((e) => {
+			.catch(() => {
 				errorPost.set(true);
 			})
 			.finally(() => {

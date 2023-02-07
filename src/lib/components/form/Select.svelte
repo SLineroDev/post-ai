@@ -1,9 +1,9 @@
 <script lang="ts">
 	export let selected: string;
 	export let options: string[];
-	export let label: string = '';
-	export let placeholder: string = '';
-	export let leftIconURL: string = '';
+	export let label = '';
+	export let placeholder = '';
+	export let leftIconURL = '';
 
 	function capitalize(string: string) {
 		return string.charAt(0).toUpperCase() + string.slice(1);
