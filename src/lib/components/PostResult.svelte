@@ -2,20 +2,19 @@
 	import IdeasAnimation from '$lib/assets/animations/IdeasAnimation.svelte';
 	import ThinkAnimation from '$lib/assets/animations/ThinkAnimation.svelte';
 	import { fade } from 'svelte/transition';
-	import { ideasList, loading, error } from '../../stores/result.store';
-	import IdeasList from './IdeasList.svelte';
+	import { errorPost, loadingPost, postResult } from '../../stores/result.store';
 
-	let ideasListValue: string[];
+	let postValue: string;
 	let loadingValue: boolean;
 	let errorValue: boolean;
 
-	ideasList.subscribe((value) => {
-		ideasListValue = value;
+	postResult.subscribe((value) => {
+		postValue = value;
 	});
-	loading.subscribe((value) => {
+	loadingPost.subscribe((value) => {
 		loadingValue = value;
 	});
-	error.subscribe((value) => {
+	errorPost.subscribe((value) => {
 		errorValue = value;
 	});
 </script>
@@ -27,11 +26,11 @@
 		<div class="animation" in:fade>
 			<ThinkAnimation />
 		</div>
-		{:else if !loadingValue && !errorValue && ideasListValue.length > 0}
-		<IdeasList ideasList={ideasListValue} />
-		{:else if !loadingValue && errorValue}
+	{:else if !loadingValue && !errorValue && postValue.length > 0}
+		<div class="post_result">{postValue}</div>
+	{:else if !loadingValue && errorValue}
 		<div in:fade>There was an error, pls try again</div>
-		{:else}
+	{:else}
 		<div class="animation" in:fade>
 			<IdeasAnimation />
 		</div>
@@ -59,9 +58,16 @@
 
 	.result {
 		flex: 1;
-		padding: 1rem;
+		margin-top: 1rem;
+		margin-left: 1rem;
+		padding-right: 1rem;
+		margin-bottom: 2rem;
 		max-height: 450px;
 		overflow-y: scroll;
+	}
+	.post_result {
+		padding-inline: 1rem;
+		white-space: pre-line;
 	}
 
 	@media (max-height: 1000px) {

@@ -7,4 +7,3 @@ export interface TabItem {
 	component: ComponentType;
 	iconComponent: ComponentType;
 }
-

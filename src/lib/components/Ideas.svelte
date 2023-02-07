@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { generateIdeas } from '$lib/services';
-	import { error, ideasList, loading } from '../../stores/result.store';
+	import { errorIdeas, ideasList, loadingIdeas } from '../../stores/result.store';
 	import { addKeywordIfValid } from './form/form.helper';
 	import Form from './form/Form.svelte';
 	import KeywordsInput from './form/keywords/KeywordsInput.svelte';
@@ -11,8 +11,8 @@
 	let keywordList: string[] = [];
 
 	function handleGenerate() {
-		loading.set(true);
-		error.set(false);
+		loadingIdeas.set(true);
+		errorIdeas.set(false);
 		if (keywordsInput) {
 			keywordList = addKeywordIfValid(keywordsInput, keywordList);
 			keywordsInput = '';
@@ -22,10 +22,10 @@
 				ideasList.set(resp);
 			})
 			.catch((e) => {
-				error.set(true);
+				errorIdeas.set(true);
 			})
 			.finally(() => {
-				loading.set(false);
+				loadingIdeas.set(false);
 			});
 	}
 </script>

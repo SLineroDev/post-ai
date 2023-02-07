@@ -91,6 +91,6 @@ input {
 }
 
 #root>main>div:nth-child(1)>ul>li.active>button>svg>g>path,
-#root>main>div:nth-child(1)>ul>li:hover>button>svg>g>path {
+#root>main>div:nth-child(1)>ul>li>button:hover>svg>g>path {
   fill: #6455A8;
 }

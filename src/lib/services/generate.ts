@@ -1,4 +1,4 @@
-import type { GeneratePostSettings } from "$lib/interfaces/post";
+import type { GeneratePostSettings } from '$lib/interfaces/post';
 
 const GENERATE_IDEAS_URL = '/api/generate-ideas';
 const GENERATE_POST_URL = '/api/generate-post';

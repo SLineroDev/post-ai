@@ -1,7 +1,7 @@
 <script lang="ts">
 	import type { GeneratePostSettings } from '$lib/interfaces/post';
 	import { generatePost } from '$lib/services';
-	import { error, postResult, loading } from '../../stores/result.store';
+	import { errorPost, loadingPost, postResult } from '../../stores/result.store';
 	import Form from './form/Form.svelte';
 	import Select from './form/Select.svelte';
 
@@ -18,7 +18,14 @@
 		'drama',
 		'informative'
 	];
-	let audienceOptions: string[] = ['everyone', 'Z Generation', 'Millennials', 'X Generation', 'Baby Boomers', 'Silent Gen'];
+	let audienceOptions: string[] = [
+		'everyone',
+		'Z Generation',
+		'Millennials',
+		'X Generation',
+		'Baby Boomers',
+		'Silent Gen'
+	];
 	let socialMediaOptions: string[] = ['Instagram', 'Twitter', 'Facebook', 'LinkedIn'];
 	let selectedTone: string = toneOptions[0];
 	let selectedAudience: string = audienceOptions[0];
@@ -26,8 +33,8 @@
 
 	function handleGenerate() {
 		if (!postTitle) return;
-		loading.set(true);
-		error.set(false);
+		loadingPost.set(true);
+		errorPost.set(false);
 		const postSettings: GeneratePostSettings = {
 			title: postTitle,
 			tone: selectedTone,
@@ -39,10 +46,10 @@
 				postResult.set(resp);
 			})
 			.catch((e) => {
-				error.set(true);
+				errorPost.set(true);
 			})
 			.finally(() => {
-				loading.set(false);
+				loadingPost.set(false);
 			});
 	}
 </script>

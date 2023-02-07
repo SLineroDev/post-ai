@@ -1,5 +1,5 @@
+import { SECRET_COHERE_API_KEY } from '$env/static/private';
 import type { CohereRequestParameters, GenerateResponse, Parameters } from '../interfaces';
-import { SECRET_COHERE_API_KEY } from '$env/static/private'
 
 const COHERE_API_GENERATE_URL = 'https://api.cohere.ai/generate';
 
@@ -31,6 +31,6 @@ export async function generate(parameters: CohereRequestParameters) {
 		headers,
 		body: JSON.stringify(parameters)
 	}).then((res) => res.json());
-	console.log({generations: response.generations, prompt: response.prompt});
+	console.log({ generations: response.generations, prompt: response.prompt });
 	return response;
 }

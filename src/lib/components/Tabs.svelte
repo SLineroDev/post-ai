@@ -1,31 +1,32 @@
 <script lang="ts">
 	import ActiveTabLine from '$lib/assets/icons/ActiveTabLine.svelte';
 	import { crossFadeAnimation } from '$lib/utils/animations';
+	import { activeTab } from '../../stores/tab.store';
 	import type { TabItem } from '../interfaces/tabs';
 
 	export let tabs: TabItem[];
-	export let activeTab: string;
+	export let activeTabValue: string;
 
 	const [send, receive] = crossFadeAnimation();
 
 	function handleClick(tabLabel: string) {
-		activeTab = tabLabel;
+		activeTab.set(tabLabel);
 	}
 </script>
 
 <ul>
 	{#each tabs as tab (tab)}
-		<li class={activeTab === tab.label ? 'active' : ''}>
+		<li class={activeTabValue === tab.label ? 'active' : ''}>
 			<button class="tab_button" on:click={() => handleClick(tab.label)}>
 				<svelte:component this={tab.iconComponent} />
 				{tab.label}
 			</button>
-			<ActiveTabLine strokeWidth={activeTab === tab.label ? 8 : 0} />
+			<ActiveTabLine strokeWidth={activeTabValue === tab.label ? 8 : 0} />
 		</li>
 	{/each}
 </ul>
 {#each tabs as tab (tab)}
-	{#if activeTab === tab.label}
+	{#if activeTabValue === tab.label}
 		<div class="form-container" in:receive={{ key: tab }}>
 			<svelte:component this={tab.component} />
 		</div>
@@ -61,8 +62,8 @@
 		color: #939393;
 	}
 
-	li.active button,
-	li:hover button {
+	li.active > button,
+	button:hover {
 		cursor: pointer;
 		fill: #6455a8;
 		color: #6455a8;
