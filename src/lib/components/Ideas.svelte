@@ -33,19 +33,19 @@
 <svelte:head>
 	<title>postai - Ideas Generator</title>
 </svelte:head>
-<h2>{title}</h2>
-<h3>{subtitle}</h3>
+<h1>{title}</h1>
+<h2>{subtitle}</h2>
 <Form on:generate={handleGenerate}>
 	<KeywordsInput bind:keywordsInput bind:keywordList />
 </Form>
 
 <style>
-	h2 {
+	h1 {
 		font-size: 24px;
 		font-weight: 700;
 		color: #6455a8;
 	}
-	h3 {
+	h2 {
 		margin-top: 0.25rem;
 		margin-bottom: 2rem;
 		color: #6455a8;

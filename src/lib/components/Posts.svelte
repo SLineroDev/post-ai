@@ -67,7 +67,7 @@
 <svelte:head>
 	<title>postai - Post Generator</title>
 </svelte:head>
-<h2>{title}</h2>
+<h1>{title}</h1>
 <Form on:generate={handleGenerate}>
 	<div class="input">
 		<input bind:value={postTitle} placeholder="Insert a title for your post" />
@@ -102,7 +102,7 @@
 </Form>
 
 <style>
-	h2 {
+	h1 {
 		font-size: 24px;
 		font-weight: 700;
 		color: #6455a8;
