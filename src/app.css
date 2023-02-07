@@ -1,104 +1,101 @@
 *,
 *::before,
 *::after {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 html {
-	height: 100%;
+  height: 100%;
 }
 
 body {
-	height: 100%;
-	overflow-y: scroll;
+  height: 100%;
 }
 
 body {
-	font-family: 'Montserrat', system-ui, sans-serif;
-	background: radial-gradient(
-			50% 50% at 50% 50%,
-			rgba(100, 85, 168, 0.3) 0%,
-			rgba(155, 147, 191, 0.3) 62.85%,
-			rgba(217, 217, 217, 0.3) 100%
-		),
-		#ffffff;
-	background-repeat: no-repeat;
-	background-size: cover;
-	background-position: center;
-	background-attachment: fixed;
+  font-family: 'Montserrat', system-ui, sans-serif;
+  background: radial-gradient(50% 50% at 50% 50%,
+      rgba(100, 85, 168, 0.3) 0%,
+      rgba(155, 147, 191, 0.3) 62.85%,
+      rgba(217, 217, 217, 0.3) 100%),
+    #ffffff;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
 }
 
 #root {
-	display: flex;
-	flex-direction: column;
-	place-content: center;
-	height: 100%;
+  display: flex;
+  flex-direction: column;
+  place-content: center;
+  height: 100%;
 }
 
-@media (max-width: 1000px) {
-	#root {
-		height: auto;
-	}
+@media (max-width: 1100px) {
+  #root {
+    height: initial;
+  }
 }
 
 @media (max-width: 655px) {
-	#root {
-		width: 100%;
-	}
+  #root {
+    width: 100%;
+  }
 }
 
 button {
-	appearance: none;
-	-webkit-appearance: none;
-	border-radius: 0;
-	background: none;
-	box-shadow: none;
-	padding: 0;
-	cursor: pointer;
-	border: none;
-	color: inherit;
-	font: inherit;
+  appearance: none;
+  -webkit-appearance: none;
+  border-radius: 0;
+  background: none;
+  box-shadow: none;
+  padding: 0;
+  cursor: pointer;
+  border: none;
+  color: inherit;
+  font: inherit;
 }
 
 input {
-	all: unset;
+  all: unset;
 }
 
 .custom-scroll::-webkit-scrollbar {
-	-webkit-appearance: none;
+  -webkit-appearance: none;
 }
 
 .custom-scroll::-webkit-scrollbar:vertical {
-	width: 6px;
+  width: 6px;
 }
 
 .custom-scroll::-webkit-scrollbar-button:increment,
 .custom-scroll::-webkit-scrollbar-button {
-	display: none;
+  display: none;
 }
 
 .custom-scroll::-webkit-scrollbar-thumb {
-	background-color: #6455a8;
-	border-radius: 20px;
-	border: 1px solid #f1f2f3;
+  background-color: #6455a8;
+  border-radius: 20px;
+  border: 1px solid #f1f2f3;
 }
 
 .custom-scroll::-webkit-scrollbar-track {
-	border-radius: 10px;
+  border-radius: 10px;
 }
 
 .icon {
-	display: block;
+  display: block;
 }
 
-#root > main > div:nth-child(1) > ul > li.active > button > svg > g > path,
-#root > main > div:nth-child(1) > ul > li > button:hover > svg > g > path {
-	fill: #6455a8;
+#root>main>div:nth-child(1)>ul>li.active>button>svg>g>path,
+#root>main>div:nth-child(1)>ul>li>button:hover>svg>g>path {
+  fill: #6455a8;
 }
 
 .spacer {
-	width: 16px;
-	flex: 0 1 auto;
+  width: 16px;
+  flex: 0 1 auto;
 }
