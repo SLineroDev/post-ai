@@ -1,4 +1,5 @@
 <script lang="ts">
+	import ErrorAnimation from '$lib/assets/animations/ErrorAnimation.svelte';
 	import IdeasAnimation from '$lib/assets/animations/IdeasAnimation.svelte';
 	import ThinkAnimation from '$lib/assets/animations/ThinkAnimation.svelte';
 	import { fade } from 'svelte/transition';
@@ -30,7 +31,9 @@
 	{:else if !loadingValue && !errorValue && ideasListValue.length > 0}
 		<IdeasList ideasList={ideasListValue} />
 	{:else if !loadingValue && errorValue}
-		<div in:fade>There was an error, pls try again</div>
+		<div class="animation" in:fade>
+			<ErrorAnimation />
+		</div>
 	{:else}
 		<div class="animation" in:fade>
 			<IdeasAnimation />
