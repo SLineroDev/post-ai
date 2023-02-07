@@ -9,7 +9,7 @@
 		background: #fafafb;
 		border-radius: 1.5rem;
 		width: 42%;
-		height: 550px;
+		height: 500px;
 	}
 
 	@media (max-width: 1400px) {

@@ -52,7 +52,7 @@
 		align-items: center;
 		flex: 1;
 		gap: 2rem;
-		padding: 1.5rem;
+		padding: 1rem 1.5rem;
 	}
 
 	@media (max-width: 1100px) {
@@ -68,7 +68,7 @@
 	}
 	footer {
 		color: #6455a8;
-		font-size: 14px;
+		font-size: 12px;
 		text-align: center;
 		padding-bottom: 1rem;
 		display: flex;
