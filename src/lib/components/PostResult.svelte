@@ -1,6 +1,7 @@
 <script lang="ts">
+	import ErrorAnimation from '$lib/assets/animations/ErrorAnimation.svelte';
 	import IdeasAnimation from '$lib/assets/animations/IdeasAnimation.svelte';
-	import ThinkAnimation from '$lib/assets/animations/ThinkAnimation.svelte';
+	import PostAnimation from '$lib/assets/animations/PostAnimation.svelte';
 	import { fade } from 'svelte/transition';
 	import { errorPost, loadingPost, postResult } from '../../stores/result.store';
 	import Copy from './Copy.svelte';
@@ -26,25 +27,27 @@
 
 <div class="results-title">
 	{#if showPost()}
-		<span class="spacer"></span>
+		<span class="spacer" />
 	{/if}
 	<span>Results</span>
 	{#if showPost()}
-	<span>
-		<Copy text={postValue} spaceAway={6} />
-	</span>
+		<span>
+			<Copy text={postValue} spaceAway={6} />
+		</span>
 	{/if}
 </div>
 
 <div class="result custom-scroll">
 	{#if loadingValue}
 		<div class="animation" in:fade>
-			<ThinkAnimation />
+			<PostAnimation />
 		</div>
 	{:else if showPost()}
 		<div class="post_result" in:fade>{postValue}</div>
 	{:else if !loadingValue && errorValue}
-		<div in:fade>There was an error, pls try again</div>
+		<div class="animation" in:fade>
+			<ErrorAnimation />
+		</div>
 	{:else}
 		<div class="animation" in:fade>
 			<IdeasAnimation />

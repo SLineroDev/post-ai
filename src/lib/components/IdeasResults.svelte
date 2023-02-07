@@ -66,6 +66,4 @@
 		max-height: 450px;
 		overflow-y: scroll;
 	}
-
-
 </style>

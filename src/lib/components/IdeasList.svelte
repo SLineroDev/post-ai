@@ -64,8 +64,9 @@
 		fill: #6455a8;
 	}
 
-	.idea_buttons span:hover {
-		cursor: pointer;
-		opacity: 0.8;
+	@media (max-height: 1000px) {
+		.ideas-container {
+			min-height: 400px;
+		}
 	}
 </style>
