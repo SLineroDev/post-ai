@@ -67,10 +67,5 @@
 		overflow-y: scroll;
 	}
 
-	@media (max-height: 1000px) {
-		.result {
-			max-height: unset;
-			min-height: 450px;
-		}
-	}
+
 </style>

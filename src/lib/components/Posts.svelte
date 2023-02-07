@@ -8,10 +8,12 @@
 
 	let title = "Now let's start generating the next post!";
 
-	let postTitle = 'The benefits of a healthy lifestyle';
+	let postTitle = '';
 	ideaToPost.subscribe((value) => {
 		postTitle = value;
 	});
+
+	let showValidation: boolean = false;
 
 	let toneOptions: string[] = [
 		'neutral',
@@ -36,7 +38,11 @@
 	let selectedSocialMedia: string = socialMediaOptions[0];
 
 	function handleGenerate() {
-		if (!postTitle) return;
+		if (!postTitle) {
+			showValidation = true;
+			return;
+		}
+		showValidation = false;
 		loadingPost.set(true);
 		errorPost.set(false);
 		const postSettings: GeneratePostSettings = {
@@ -63,7 +69,12 @@
 </svelte:head>
 <h2>{title}</h2>
 <Form on:generate={handleGenerate}>
-	<input bind:value={postTitle} placeholder="Insert a title for your post" />
+	<div class="input">
+		<input bind:value={postTitle} placeholder="Insert a title for your post" />
+		{#if showValidation}
+			<div>The title is mandatory</div>
+		{/if}
+	</div>
 	<div class="select-container">
 		<div class="row">
 			<Select
@@ -96,9 +107,15 @@
 		font-weight: 700;
 		color: #6455a8;
 	}
+
+	.input > div{
+		padding-top: 0.5em;
+		color: red;
+	}
 	input {
 		border-bottom: 2px solid #ff6263;
 		font-weight: 700;
+		width: 100%;
 		padding-top: 1.5rem;
 		line-height: 1.3;
 		color: #ff6263;
