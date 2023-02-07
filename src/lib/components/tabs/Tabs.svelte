@@ -1,8 +1,8 @@
 <script lang="ts">
 	import ActiveTabLine from '$lib/assets/icons/ActiveTabLine.svelte';
 	import { crossFadeAnimation } from '$lib/utils/animations';
-	import { activeTab } from '../../stores/tab.store';
-	import type { TabItem } from '../interfaces/tabs';
+	import { activeTab } from '../../../stores/tab.store';
+	import type { TabItem } from '../../interfaces/tabs';
 
 	export let tabs: TabItem[];
 	export let activeTabValue: string;

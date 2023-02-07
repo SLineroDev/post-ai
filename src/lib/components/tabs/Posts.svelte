@@ -1,10 +1,10 @@
 <script lang="ts">
 	import type { GeneratePostSettings } from '$lib/interfaces/post';
 	import { generatePost } from '$lib/services';
-	import { errorPost, loadingPost, postResult } from '../../stores/result.store';
-	import { ideaToPost } from '../../stores/tab.store';
-	import Form from './form/Form.svelte';
-	import Select from './form/Select.svelte';
+	import { errorPost, loadingPost, postResult } from '../../../stores/result.store';
+	import { ideaToPost } from '../../../stores/tab.store';
+	import Form from '../form/Form.svelte';
+	import Select from '../form/Select.svelte';
 
 	let title = "Now let's start generating the next post!";
 

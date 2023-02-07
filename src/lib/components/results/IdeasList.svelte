@@ -1,6 +1,6 @@
 <script lang="ts">
-	import Copy from './Copy.svelte';
-	import PostFromIcon from './PostFromIcon.svelte';
+	import Copy from '../Copy.svelte';
+	import PostFromIcon from '../PostFromIcon.svelte';
 	export let ideasList: string[];
 
 	function removeIdeasNumber(idea: string): string {

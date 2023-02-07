@@ -3,7 +3,7 @@
 	import IdeasAnimation from '$lib/assets/animations/IdeasAnimation.svelte';
 	import ThinkAnimation from '$lib/assets/animations/ThinkAnimation.svelte';
 	import { fade } from 'svelte/transition';
-	import { errorIdeas, ideasList, loadingIdeas } from '../../stores/result.store';
+	import { errorIdeas, ideasList, loadingIdeas } from '../../../stores/result.store';
 	import IdeasList from './IdeasList.svelte';
 
 	let ideasListValue: string[];

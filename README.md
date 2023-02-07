@@ -15,7 +15,7 @@ Post.Ai is created using
 - [Vercel](https://vercel.com/) for deployment
 - [Cohere API](https://cohere.ai/) for AI.
 
-----------
+---
 
 This project was created for [Midudev's Hackathon](https://github.com/midudev/midu-cohere-hackathon) and has no commertial intentions.
 

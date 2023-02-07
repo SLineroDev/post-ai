@@ -30,7 +30,13 @@
 	<div>
 		Using <a href="https://cohere.ai/" target="_blank" rel="noopener noreferrer">Cohere Api</a>
 		. For the
-		<a href="https://github.com/midudev/midu-cohere-hackathon" target="_blank" rel="noopener noreferrer">Midudev´s hackathon</a>
+		<a
+			href="https://github.com/midudev/midu-cohere-hackathon"
+			target="_blank"
+			rel="noopener noreferrer"
+		>
+			Midudev´s hackathon
+		</a>
 	</div>
 </footer>
 
@@ -61,7 +67,7 @@
 		}
 	}
 	footer {
-		color: #6455A8;
+		color: #6455a8;
 		font-size: 14px;
 		text-align: center;
 		padding-bottom: 1rem;
@@ -70,7 +76,7 @@
 		gap: 0.5rem;
 	}
 
-	footer a{
+	footer a {
 		color: #cd2d2d;
 	}
 </style>

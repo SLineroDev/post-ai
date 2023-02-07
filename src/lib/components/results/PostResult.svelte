@@ -3,8 +3,8 @@
 	import IdeasAnimation from '$lib/assets/animations/IdeasAnimation.svelte';
 	import PostAnimation from '$lib/assets/animations/PostAnimation.svelte';
 	import { fade } from 'svelte/transition';
-	import { errorPost, loadingPost, postResult } from '../../stores/result.store';
-	import Copy from './Copy.svelte';
+	import { errorPost, loadingPost, postResult } from '../../../stores/result.store';
+	import Copy from '../Copy.svelte';
 
 	let postValue: string;
 	let loadingValue: boolean;

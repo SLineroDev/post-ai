@@ -1,9 +1,9 @@
 <script lang="ts">
 	import { generateIdeas } from '$lib/services';
-	import { errorIdeas, ideasList, loadingIdeas } from '../../stores/result.store';
-	import { addKeywordIfValid } from './form/form.helper';
-	import Form from './form/Form.svelte';
-	import KeywordsInput from './form/keywords/KeywordsInput.svelte';
+	import { errorIdeas, ideasList, loadingIdeas } from '../../../stores/result.store';
+	import { addKeywordIfValid } from '../form/form.helper';
+	import Form from '../form/Form.svelte';
+	import KeywordsInput from '../form/keywords/KeywordsInput.svelte';
 
 	let title = 'Hey! Start generating your ideas for the next post';
 	let subtitle = 'For example sport, food or money';
