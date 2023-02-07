@@ -2,12 +2,16 @@
 	import type { GeneratePostSettings } from '$lib/interfaces/post';
 	import { generatePost } from '$lib/services';
 	import { errorPost, loadingPost, postResult } from '../../stores/result.store';
+	import { ideaToPost } from '../../stores/tab.store';
 	import Form from './form/Form.svelte';
 	import Select from './form/Select.svelte';
 
 	let title = "Now let's start generating the next post!";
 
 	let postTitle = 'The benefits of a healthy lifestyle';
+	ideaToPost.subscribe((value) => {
+		postTitle = value;
+	});
 
 	let toneOptions: string[] = [
 		'neutral',
@@ -99,7 +103,7 @@
 		line-height: 1.3;
 		color: #ff6263;
 		opacity: 0.75;
-		font-size: 20px;
+		font-size: 18px;
 	}
 
 	input::placeholder {

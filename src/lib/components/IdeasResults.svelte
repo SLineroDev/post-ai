@@ -22,7 +22,7 @@
 
 <div class="results-title"><span>Results</span></div>
 
-<div class="result custom-scroll">
+<div class="result custom-scroll" in:fade>
 	{#if loadingValue}
 		<div class="animation" in:fade>
 			<ThinkAnimation />
@@ -48,7 +48,7 @@
 		font-size: 20px;
 		justify-content: center;
 		align-items: flex-end;
-		height: 60px;
+		min-height: 60px;
 		border-bottom: 2px solid #6455a88b;
 		color: #6455a8;
 		font-weight: 700;
@@ -59,6 +59,9 @@
 
 	.result {
 		flex: 1;
+		display: flex;
+		justify-content: center;
+		align-items: center;
 		padding: 1rem;
 		max-height: 450px;
 		overflow-y: scroll;
@@ -67,6 +70,7 @@
 	@media (max-height: 1000px) {
 		.result {
 			max-height: unset;
+			min-height: 450px;
 		}
 	}
 </style>

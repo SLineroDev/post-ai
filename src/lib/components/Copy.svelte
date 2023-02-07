@@ -1,13 +1,11 @@
 <script lang="ts">
-	import { fade } from 'svelte/transition';
-
+	import CopyIcon from '$lib/assets/icons/CopyIcon.svelte';
 	import { copy } from 'svelte-copy';
 	import Popover from 'svelte-easy-popover';
-	import CopyIcon from '$lib/assets/icons/CopyIcon.svelte';
+	import { fade } from 'svelte/transition';
 
 	export let text: string;
-
-	let popoverText = 'Copy';
+  export let spaceAway: number = 16
 	let copied: boolean = false;
 
 	let referenceElement;
@@ -15,7 +13,7 @@
 
 <!-- <button bind:this={referenceElement}>Popover is {isPopoverOpen ? "Opened" : "Closed"}</button>
  -->
-<span
+<button
 	use:copy={text}
 	on:svelte-copy={(event) => {
 		copied = true;
@@ -24,24 +22,34 @@
 	bind:this={referenceElement}
 >
 	<CopyIcon />
-</span>
+</button>
 <Popover
 	triggerEvents={['hover', 'focus']}
 	{referenceElement}
 	placement="top"
-	spaceAway={16}
+	{spaceAway}
 	on:change={({ detail: { isOpen } }) => {
 		if (!isOpen) {
 			copied = false;
 		}
 	}}
 >
-	<div transition:fade={{ duration: 250 }}>{copied ? 'Copied ✔️' : 'Copy'}</div>
+	<div class="popover" transition:fade={{ duration: 250 }}>{copied ? 'Copied ✔️' : 'Copy'}</div>
 </Popover>
 
 <style>
-	span:hover {
+	.popover{
+		font-size: 16px;
+		font-weight: 400;
+	}
+
+	button:hover {
 		cursor: pointer;
+		opacity: 0.8;
+	}
+
+	button:focus-within {
+		outline: none;
 		opacity: 0.8;
 	}
 </style>

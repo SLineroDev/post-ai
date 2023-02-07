@@ -1,6 +1,6 @@
 <script lang="ts">
-	import Copy from '$lib/components/Copy.svelte';
-	import HeartIcon from '$lib/assets/icons/HeartIcon.svelte';
+	import Copy from './Copy.svelte';
+	import PostFromIcon from './PostFromIcon.svelte';
 	export let ideasList: string[];
 
 	function removeIdeasNumber(idea: string): string {
@@ -17,8 +17,8 @@
 			<div class="idea_content">
 				<span>{removeIdeasNumber(idea)}</span>
 				<div class="idea_buttons">
-					<Copy text={removeIdeasNumber(idea)}/>
-					<span><HeartIcon /></span>
+					<Copy text={removeIdeasNumber(idea)} />
+					<PostFromIcon idea={removeIdeasNumber(idea)} />
 				</div>
 			</div>
 		</div>
@@ -30,7 +30,8 @@
 		display: flex;
 		flex-direction: column;
 		justify-content: space-around;
-		height: 100%;
+		min-height: 100%;
+		width: 100%;
 	}
 
 	.idea {
@@ -60,6 +61,7 @@
 	.idea_buttons {
 		display: flex;
 		gap: 0.5em;
+		fill: #6455a8;
 	}
 
 	.idea_buttons span:hover {

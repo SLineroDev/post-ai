@@ -33,15 +33,6 @@
 		justify-content: space-between;
 	}
 
-	/* 	label span {
-		display: flex;
-		flex-direction: column;
-	}
-
-	label .secondary-label-text {
-		font-size: 11px;
-	} */
-
 	input::placeholder {
 		color: #cecece;
 	}
@@ -52,7 +43,7 @@
 	input {
 		border-bottom: 2px solid #ff6263;
 		line-height: 1.3;
-		font-size: 20px;
+		font-size: 18px;
 		color: #6455a8;
 		font-weight: 700;
 		width: 100%;

@@ -2,7 +2,7 @@
 	class="icon"
 	width="16"
 	height="16"
-	viewBox="0 0 13 13"
+	viewBox="1 1 11 11"
 	fill="none"
 	xmlns="http://www.w3.org/2000/svg"
 >

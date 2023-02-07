@@ -94,3 +94,8 @@ input {
 #root>main>div:nth-child(1)>ul>li>button:hover>svg>g>path {
   fill: #6455A8;
 }
+
+.spacer {
+  width: 16px;
+  flex: 0 1 auto;
+}
