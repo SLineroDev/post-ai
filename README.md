@@ -1,12 +1,12 @@
 # Post.ai
 
-<img src="./static/meta-img.png" alt="Post.ai logo" width="25%">
+<img src="./static/meta-img.png" alt="Post.ai logo" width="50%">
 
 Post.ai is a web application that allows you to generate social media content.
 
 It also can help you by giving some post ideas.
 
-<img src="./readme-img/App.png" alt="Post.ai logo" width="25%">
+<img src="./readme-img/App.png" alt="Post.ai logo" width="70%">
 
 ## Tech stack
 
@@ -19,7 +19,7 @@ Post.Ai is created using
 
 ---
 
-This project was created for [Midudev's Hackathon](https://github.com/midudev/midu-cohere-hackathon) and has no commertial intentions.
+This project was created for [Midudev's Hackathon](https://github.com/midudev/midu-cohere-hackathon) and has no commercial intentions.
 
 Any code suggestion is appreciated.
 
